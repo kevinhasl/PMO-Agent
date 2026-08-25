@@ -1,0 +1,2 @@
+import Link from 'next/link';
+export default function Sidebar() { return <aside className="global-sidebar"><div className="brand"><span className="brand-mark">P</span><span>PORTFOLIO</span></div><nav><Link className="nav-item" href="/"><span>▦</span>Overview</Link><Link className="nav-item" href="/portfolio"><span>◫</span>Portfolio</Link><Link className="nav-item" href="/roadmap"><span>⌁</span>Roadmap</Link></nav><div className="sidebar-bottom"><div className="agent-pulse">✦</div><div><strong>PMO Agent</strong><small>Portfolio intelligence</small></div></div></aside>; }

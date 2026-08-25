@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+.resize-handle{cursor:col-resize;background:#edf2f1;position:relative;z-index:2}.resize-handle:hover,.resize-handle:active{background:#76bcb5}.resize-handle::after{content:'';position:absolute;top:50%;left:2px;width:4px;height:44px;transform:translateY(-50%);border-radius:4px;background:#90aaa8}@media(max-width:1150px){.resize-handle{display:none}}
 .detail-reports article p:first-of-type::before{content:'Summary: ';font-weight:700;color:var(--ink)}
 .global-sidebar{position:fixed;inset:0 auto 0 0;width:228px;background:#103b45;color:#d8e6e5;padding:28px 18px;display:flex;flex-direction:column;z-index:10}.with-sidebar .page-content{margin-left:228px;min-height:100vh}@media(max-width:720px){.global-sidebar{display:none}.with-sidebar .page-content{margin-left:0}}
 .roadmap-filters{display:flex;gap:6px;flex-wrap:wrap;margin-top:22px}.roadmap-filters button{border:1px solid #d7e1df;background:#fff;border-radius:7px;padding:7px 9px;font-size:11px;color:var(--muted)}.roadmap-filters button.selected{background:#e6f1ef;border-color:#c4dfda;color:var(--teal);font-weight:700}

@@ -1,10 +1,12 @@
+'use client';
 import Link from 'next/link';
-import { portfolioProjects } from '../portfolioData';
 import Sidebar from '../components/Sidebar';
+import { useDashboardData } from '../components/DashboardDataProvider';
 
 const healthOrder = ['Off track', 'At risk', 'On track'];
 
 export default function PortfolioPage() {
+  const { projects: portfolioProjects } = useDashboardData();
   const types = Array.from(new Set(portfolioProjects.map(project => project.type))).map(type => {
     const items = portfolioProjects.filter(project => project.type === type);
     return { type, slug: items[0].typeSlug, total: items.length, counts: healthOrder.map(health => items.filter(project => project.health === health).length) };

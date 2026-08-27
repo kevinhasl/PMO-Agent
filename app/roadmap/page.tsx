@@ -1,13 +1,14 @@
  'use client';
 import Link from 'next/link';
 import { useState } from 'react';
-import { portfolioProjects } from '../portfolioData';
 import Sidebar from '../components/Sidebar';
+import { useDashboardData } from '../components/DashboardDataProvider';
 
 const healthClass: Record<string, string> = { 'On track': 'good', 'At risk': 'risk', 'Off track': 'watch' };
 const targetWindow = (target: string) => { const date = new Date(target); const period = date.getDate() <= 10 ? 'Early' : date.getDate() <= 20 ? 'Mid' : 'Late'; return `${period} ${date.toLocaleString('en-US', { month: 'short' })}`; };
 
 export default function RoadmapPage() {
+  const { projects: portfolioProjects } = useDashboardData();
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
   const [showOnHold, setShowOnHold] = useState(false);
   const types = Array.from(new Set(portfolioProjects.map(project => project.type))).sort();
